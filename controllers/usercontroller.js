@@ -225,10 +225,10 @@ exports.userLogin = async (req, res) => {
         
         res.clearCookie("token", {
             httpOnly: true,
-            signed: true,
-            path: "/",
-            secure: true,   // Required for HTTPS (Vercel)
-            sameSite: "None"
+            // signed: true,
+            // path: "/",
+            // secure: true,   // Required for HTTPS (Vercel)
+            // sameSite: "None"
         });
 
         const payload = {
@@ -249,11 +249,11 @@ exports.userLogin = async (req, res) => {
         const options = {
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
             httpOnly: true,
-            signed: true,
-              // Required for HTTPS (Vercel)
-            sameSite: "None",
+            // signed: true,
+            //   // Required for HTTPS (Vercel)
+            // sameSite: "None",
            
-            path:"/"
+            // path:"/"
         }
           
         res.cookie("token", token, options);
@@ -267,7 +267,7 @@ exports.userLogin = async (req, res) => {
 
     }
     catch (error) {
-        
+        console.log("login error",error.message);
         return res.status(500).json({
             success: false,
             message:`Internal Server Error, ${error.message}`,
