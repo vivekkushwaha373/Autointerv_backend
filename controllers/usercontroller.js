@@ -465,11 +465,12 @@ exports.changepassword = async (req, res) => {
 exports.logout = (req, res) => {
     try {
         // Clear the cookie named 'token'
-         res.clearCookie("token", {
+        res.clearCookie("token", {
             httpOnly: true,
-            domain: "localhost",
             signed: true,
-            path:'/'
+            // path: "/",
+            secure: true,   // Required for HTTPS (Vercel)
+            sameSite: "None"
         });
 
         // Send a success response
