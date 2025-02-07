@@ -228,7 +228,7 @@ exports.userLogin = async (req, res) => {
             signed: true,
             // path: "/",
             // secure: true,   // Required for HTTPS (Vercel)
-            // sameSite: "None"
+            sameSite: "Strict"
         });
 
         const payload = {
@@ -251,7 +251,7 @@ exports.userLogin = async (req, res) => {
             httpOnly: true,
             signed: true,
             //   // Required for HTTPS (Vercel)
-            // sameSite: "None",
+            sameSite: "Strict",
            
             // path:"/"
         }
