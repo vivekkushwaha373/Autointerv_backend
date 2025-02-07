@@ -225,9 +225,10 @@ exports.userLogin = async (req, res) => {
         
         res.clearCookie("token", {
             httpOnly: true,
-            domain: "localhost",
             signed: true,
-            path:'/'
+            path: "/",
+            secure: true,   // Required for HTTPS (Vercel)
+            sameSite: "None"
         });
 
         const payload = {
@@ -249,7 +250,9 @@ exports.userLogin = async (req, res) => {
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
             httpOnly: true,
             signed: true,
-            domain: "localhost",
+              // Required for HTTPS (Vercel)
+            sameSite: "None",
+           
             path:"/"
         }
           
