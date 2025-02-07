@@ -227,8 +227,8 @@ exports.userLogin = async (req, res) => {
             httpOnly: true,
             signed: true,
             // path: "/",
-            // secure: true,   // Required for HTTPS (Vercel)
-            sameSite: "Strict"
+            secure: true,   // Required for HTTPS (Vercel)
+            sameSite: "None"
         });
 
         const payload = {
@@ -250,8 +250,9 @@ exports.userLogin = async (req, res) => {
             expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
             httpOnly: true,
             signed: true,
+            secure:true,
             //   // Required for HTTPS (Vercel)
-            sameSite: "Strict",
+            sameSite: "None",
            
             // path:"/"
         }
