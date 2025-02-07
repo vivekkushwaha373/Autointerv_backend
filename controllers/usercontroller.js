@@ -468,7 +468,7 @@ exports.logout = (req, res) => {
         res.clearCookie("token", {
             httpOnly: true,
             signed: true,
-            // path: "/",
+            path: "/",
             secure: true,   // Required for HTTPS (Vercel)
             sameSite: "None"
         });
