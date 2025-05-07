@@ -253,7 +253,6 @@ exports.userLogin = async (req, res) => {
             signed: true,
             secure: true,
             domain: ".autointerv-backend.vercel.app",
-            //   // Required for HTTPS (Vercel)
             sameSite: "None",
            
             // path:"/"
