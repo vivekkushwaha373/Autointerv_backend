@@ -228,7 +228,7 @@ exports.userLogin = async (req, res) => {
             signed: true,
             secure: true,   
             path: "/",
-            domain: ".autointerv-backend.vercel.app",
+            // domain: ".autointerv-backend.vercel.app",
             sameSite: "None"
         });
 
@@ -252,7 +252,7 @@ exports.userLogin = async (req, res) => {
             httpOnly: true,
             signed: true,
             secure: true,
-            domain: ".autointerv-backend.vercel.app",
+            // domain: ".autointerv-backend.vercel.app",
             sameSite: "None",
             path: "/"
             
@@ -462,7 +462,7 @@ exports.logout = (req, res) => {
             signed: true,
             secure: true,   // Required for HTTPS (Vercel)
             path: "/",
-            domain: ".autointerv-backend.vercel.app",
+            // domain: ".autointerv-backend.vercel.app",
             sameSite: "None"
         });
 
