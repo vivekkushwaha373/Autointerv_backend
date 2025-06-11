@@ -228,7 +228,7 @@ exports.userLogin = async (req, res) => {
             signed: true,
             secure: true,   
             path: "/",
-            domain: ".autointerv.vercel.app",
+            domain: ".autointerv-backend.vercel.app",
             sameSite: "None"
         });
 
@@ -252,9 +252,10 @@ exports.userLogin = async (req, res) => {
             httpOnly: true,
             signed: true,
             secure: true,
-            domain: ".autointerv.vercel.app",
+            domain: ".autointerv-backend.vercel.app",
             sameSite: "None",
-            path:"/"
+            path: "/"
+            
            
         }
           
@@ -459,9 +460,9 @@ exports.logout = (req, res) => {
         res.clearCookie("token", {
             httpOnly: true,
             signed: true,
-            path: "/",
-            domain: ".autointerv.vercel.app",
             secure: true,   // Required for HTTPS (Vercel)
+            path: "/",
+            domain: "autointerv-backend.vercel.app",
             sameSite: "None"
         });
 
