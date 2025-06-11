@@ -462,7 +462,7 @@ exports.logout = (req, res) => {
             signed: true,
             secure: true,   // Required for HTTPS (Vercel)
             path: "/",
-            domain: "autointerv-backend.vercel.app",
+            domain: ".autointerv-backend.vercel.app",
             sameSite: "None"
         });
 
