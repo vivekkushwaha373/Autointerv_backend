@@ -244,13 +244,13 @@ exports.interviewSubmission = async (req, res) => {
         return res.status(200).json(
             {
                 success: true,
-                message:"Questions fetched successfully",
+                message:"Feedback fetched successfully",
                 question:jsonResponse
             }
         );
 
     } catch (error) {
-        console.error('Error fetching interview questions:', error.message);
+        console.error('Interview Submission Error:', error.message);
         return res.status(500).json({ error: 'An error occurred while generating questions.' });
     }
 }

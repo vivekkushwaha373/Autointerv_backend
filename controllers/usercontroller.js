@@ -226,9 +226,9 @@ exports.userLogin = async (req, res) => {
         res.clearCookie("token", {
             httpOnly: true,
             signed: true,
-            // path: "/",
+            secure: true,   
+            path: "/",
             domain: ".autointerv.vercel.app",
-            secure: true,   // Required for HTTPS (Vercel)
             sameSite: "None"
         });
 
@@ -252,10 +252,10 @@ exports.userLogin = async (req, res) => {
             httpOnly: true,
             signed: true,
             secure: true,
-            domain: ".autointerv-backend.vercel.app",
+            domain: ".autointerv.vercel.app",
             sameSite: "None",
+            path:"/"
            
-            // path:"/"
         }
           
         res.cookie("token", token, options);
@@ -398,16 +398,6 @@ exports.changepassword = async (req, res) => {
     try {
         const {oldpass,newpass, confirmpass} = req.body;
         
-        //email validator will validate the email field
-
-        // if (!newpassword || !confirmpassword || !oldpassword)
-        // {
-        //     return res.status(400).json({
-        //         success: false,
-        //         message:"invalid Entry Error",
-        //     })
-        // }
-        
         const userid = req.user.id;
 
         const existingUser = await User.findOne({ _id:userid });
@@ -469,8 +459,8 @@ exports.logout = (req, res) => {
         res.clearCookie("token", {
             httpOnly: true,
             signed: true,
-            // path: "/",
-            domain: ".autointerv-backend.vercel.app",
+            path: "/",
+            domain: ".autointerv.vercel.app",
             secure: true,   // Required for HTTPS (Vercel)
             sameSite: "None"
         });
