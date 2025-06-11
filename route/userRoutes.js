@@ -9,7 +9,7 @@ router.get('/getAllUsers', getAllUsers);
 router.post('/signup', validateSignup, userSignUp);
 router.post('/sendotp', validateOTP, sendOTP);
 router.post('/login', validateLogIn, userLogin);
-router.get('/logout', logout);
+router.post('/logout', logout);
 router.get('/auth', auth, (req,res) => {
     const user = req.user;
     
